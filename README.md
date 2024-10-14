@@ -10,10 +10,52 @@ This project includes data and content that are licensed under the Creative Comm
 Wikipedia Articles: The dataset of politicians by nationality is available as politicians_by_country_AUG.2024.csv.
 Population Data: The population data is sourced from the Population Reference Bureau as population_by_country_AUG.2024.csv.
 
+## API Documentation
+This project uses the following APIs to fetch article revision IDs and article quality scores:
+
+1. Wikipedia API:
+URL: https://en.wikipedia.org/w/api.php
+Purpose: Fetch the current revision ID for each Wikipedia article.
+Request Parameters:
+action: Specifies the type of request (e.g., "query").
+prop: Properties to fetch for the page (e.g., "revisions").
+titles: The title of the Wikipedia article.
+format: Specifies the response format (e.g., "json").
+
+2. ORES API (Objective Revision Evaluation Service):
+URL Template: https://ores.wikimedia.org/v3/scores/{wiki}/{revid}?models=articlequality
+Purpose: Retrieve article quality predictions (e.g., FA, GA, B, C, Start, Stub) for each Wikipedia article using its revision ID.
+Request Parameters:
+wiki: Specifies the language (e.g., "enwiki").
+revid: The revision ID of the Wikipedia article.
+models: The prediction model used (e.g., "articlequality").
+
+## Schemas
+wp_countries-no_match.txt
+
+    This file contains a list of countries that appear in the Wikipedia dataset 
+    Each line in the file corresponds to a country that could not be matched during the merging of the datasets.
+
+    Format: Plain text file
+    Columns:
+    country: Country name (one per line)
+
+wp_politicians_by_country.csv
+    This CSV file is the result of merging the Wikipedia dataset with the population dataset. It includes information about the number of articles per country and their quality.
+
+    Columns:
+    country: The name of the country.
+    region: The geographic region to which the country belongs.
+    population: The population of the country (in absolute numbers, not in millions).
+    article_title: The title of the Wikipedia article about the politician.
+    revision_id: The revision ID of the Wikipedia article.
+    article_quality: The predicted quality of the article, ranging from "FA" (Featured Article) to "Stub" (the lowest quality).
+
+
 ## Research Implications
 This analysis shows clear gaps in Wikipedia's coverage of politicians across countries and regions. Larger, wealthier countries tend to have more articles per capita, and these countries also have a higher proportion of high-quality articles. In contrast, smaller or developing countries are underrepresented both in total coverage and article quality.
 
-## Findings:
+## Findings
 - Coverage Gaps: Countries with better internet access and more contributors have significantly more articles. This suggests that access to digital tools and active Wikipedia editors drives coverage.
 
 - Quality Differences: Wealthier countries also tend to have more high-quality articles, while poorer countries have fewer. This reflects a potential bias in information curation on Wikipedia.
