@@ -30,6 +30,9 @@ wiki: Specifies the language (e.g., "enwiki").
 revid: The revision ID of the Wikipedia article.
 models: The prediction model used (e.g., "articlequality").
 
+## Error Logging
+During the ORES API request process, some articles may not retrieve a quality score due to various reasons (e.g., missing revision IDs or API request errors). These articles are recorded in an error_log.txt file, where each line contains the title of the article for which the ORES score retrieval failed. This allows for future investigation and potential retries of these requests.
+
 ## Schemas
 wp_countries-no_match.txt
 
