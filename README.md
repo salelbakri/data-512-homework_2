@@ -25,6 +25,7 @@ This project conducts a comprehensive analysis of the representation of politici
     ├── Intermediate
     ├── error_log.txt
     └── wp_countries-no_match.txt
+```
 
 ## Data Sources
 Wikipedia Articles: The dataset of politicians by nationality is available as politicians_by_country_AUG.2024.csv.
