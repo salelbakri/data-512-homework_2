@@ -7,6 +7,24 @@ This project conducts a comprehensive analysis of the representation of politici
    ```bash
    git clone https://github.com/salelbakri/data-512-homework_2.git
 
+## Directory Structure
+.
+├── Datasets
+│   ├── politicians_by_country_AUG.2024.csv
+│   ├── politicians_quality_scores.csv
+│   ├── population_by_country_AUG.2024.csv
+│   └── wp_politicians_by_country.csv
+├── Documentation
+│   ├── LICENSE.md
+│   └── README.md
+├── README.md
+├── Scripts
+│   └── HW2_code.ipynb
+└── output
+    ├── Intermediate
+    ├── error_log.txt
+    └── wp_countries-no_match.txt
+
 ## Data Sources
 Wikipedia Articles: The dataset of politicians by nationality is available as politicians_by_country_AUG.2024.csv.
 Population Data: The population data is sourced from the Population Reference Bureau as population_by_country_AUG.2024.csv.
