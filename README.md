@@ -8,6 +8,7 @@ This project conducts a comprehensive analysis of the representation of politici
    git clone https://github.com/salelbakri/data-512-homework_2.git
 
 ## Directory Structure
+```plaintext
 .
 ├── Datasets
 │   ├── politicians_by_country_AUG.2024.csv
